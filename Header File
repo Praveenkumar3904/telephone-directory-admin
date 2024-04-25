@@ -1,0 +1,17 @@
+#ifndef TELEPHONE_DIRECTORY_H
+#define TELEPHONE_DIRECTORY_H
+
+#include <string>
+
+class TelephoneDirectory {
+public:
+    TelephoneDirectory(const std::string& databasePath);
+    void initializeDatabase();
+    void addContact();
+    void searchContact();
+    void displayContacts();
+private:
+    std::string databasePath_;
+};
+
+#endif // TELEPHONE_DIRECTORY_H
