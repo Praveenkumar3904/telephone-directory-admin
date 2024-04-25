@@ -1,0 +1,37 @@
+#include <iostream>
+#include "TelephoneDirectory.h"
+
+int main() {
+    TelephoneDirectory directory("contacts.db");
+    directory.initializeDatabase(); // Create table if not exists
+    
+    int choice;
+    do {
+        std::cout << "\nTelephone Directory\n";
+        std::cout << "1. Add Contact\n";
+        std::cout << "2. Search Contact\n";
+        std::cout << "3. Display All Contacts\n";
+        std::cout << "4. Exit\n";
+        std::cout << "Enter your choice: ";
+        std::cin >> choice;
+
+        switch (choice) {
+            case 1:
+                directory.addContact();
+                break;
+            case 2:
+                directory.searchContact();
+                break;
+            case 3:
+                directory.displayContacts();
+                break;
+            case 4:
+                std::cout << "Exiting program.\n";
+                break;
+            default:
+                std::cout << "Invalid choice. Please try again.\n";
+        }
+    } while (choice != 4);
+
+    return 0;
+}
